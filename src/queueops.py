@@ -5,13 +5,11 @@ def take_next(queue: List[str]) -> Tuple[str | None, List[str]]:
         return None, []
     return queue[0], queue[1:]
 
-
 def move_to_back(queue: List[str], name: str) -> List[str]:
     if name not in queue:
         return queue.copy()
     idx = queue.index(name)
     return queue[:idx] + queue[idx+1:] + [queue[idx]]
-
 
 def interleave(q1: List[str], q2: List[str]) -> List[str]:
     result = []
